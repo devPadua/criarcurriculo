@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Crie seu Currículo!</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <container>
+    <div class="dados">
+        <h1>Crie seu currículo!</h1>
+        <p class="p">Nome</p>
+        <input class="inputs" type="text" id="nome" placeholder="">
+        <p class="p">Sobre mim</p>
+        <input class="inputsMaior" type="text" id="sobremim" placeholder="conte um pouco sobre você. Sua idade, formação, o que procura e expectativas...">
+        <div class="exp">
+                <div class="dados">
+                    <h2>Experiencias</h2>
+                    <p class="disclaimer"> (caso não haja, apenas deixe em branco)</p>
+                    <p class="p">Nome da empresa</p>
+                    <input class="inputs" type="text" id="sobremim" placeholder="ex. Google">
+                    <p class="p">Período trabalhado</p>
+                    <input class="inputs" type="text" id="sobremim" placeholder="ex. 2022-2024">
+                    <p class="p">Conte um pouco sobre a atividade exercida nessa empresa</p>
+                    <input class="inputsMaior" type="text" id="sobremim" placeholder="ex. Gestor de Recursos Humanos. Gestão de equipes e implementação de estratégias de recrutamento,
+                    seleção e treinamento de pessoal. Gestão de
+                    conflitos e resolução de problemas">
+                </div>
+                <div class="dados">
+                    <h3>outra experiencia</h3>
+                    <p class="disclaimer"> (caso não haja, apenas deixe em branco)</p>
+                    <p class="p">Nome da empresa</p>
+                    <input class="inputs" type="text" id="sobremim" placeholder="ex. Amazon">
+                    <p class="p">Período trabalhado</p>
+                    <input class="inputs" type="text" id="sobremim" placeholder="ex. 2021-2022">
+                    <p class="p">Conte um pouco sobre a atividade exercida nessa empresa</p>
+                    <input class="inputsMaior" type="text" id="sobremim" placeholder="ex. Gestor de Recursos Humanos. Gestão de equipes e implementação de estratégias de recrutamento,
+                    seleção e treinamento de pessoal. Gestão de
+                    conflitos e resolução de problemas">
+                </div>
+                <div class="dados">
+                    <h3>outra experiencia</h3>
+                    <p class="disclaimer"> (caso não haja, apenas deixe em branco)</p>
+                    <p class="p">Nome da empresa</p>
+                    <input class="inputs" type="text" id="sobremim" placeholder="ex. Netflix">
+                    <p class="p">Período trabalhado</p>
+                    <input class="inputs" type="text" id="sobremim" placeholder="ex. 2020-2021">
+                    <p class="p">Conte um pouco sobre a atividade exercida nessa empresa</p>
+                    <input class="inputsMaior" type="text" id="sobremim" placeholder="ex. Gestor de Recursos Humanos. Gestão de equipes e implementação de estratégias de recrutamento,
+                    seleção e treinamento de pessoal. Gestão de
+                    conflitos e resolução de problemas">
+                </div>
+                
+        </div>
+    </div>
+</container>
+    <button onclick="generatePDF()">Gerar PDF</button>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.5/pdfmake.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.5/vfs_fonts.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

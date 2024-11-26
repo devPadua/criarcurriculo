@@ -1,0 +1,84 @@
+@media (max-width: 600px) {
+    .dados {
+        padding: 10px;
+        width: 100%;  /* Ajuste a largura para 100% em telas pequenas */
+    }
+
+    .inputs {
+        font-size: 14px;  /* Reduz o tamanho da fonte */
+    }
+}
+
+input::placeholder{
+    font-style: italic;
+}
+
+.dados{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+body {
+    font-family: helvetica;
+    color: white;
+    background-image:
+    radial-gradient(at 40% 20%, #fecc09 0px, transparent 50%),
+    radial-gradient(at 80% 0%,#d84b1f 0px, transparent 50%),
+    radial-gradient(at 0% 50%, #029e79 0px, transparent 50%),
+    radial-gradient(at 80% 50%, #f16515 0px, transparent 50%),
+    radial-gradient(at 0% 100%, #00a579 0px, transparent 50%),
+    radial-gradient(at 0% 0%, #f16515 0px, transparent 50%);;
+    background-repeat: -y;
+    background-size: 2000px;
+    background-color: #4d0c5e;
+}
+
+.exp{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.p {
+    margin-bottom: 1px;
+}
+
+.inputs{
+    border: none;
+    height: 2em;
+    width: 15rem;
+    border-radius: 7px;
+}
+
+.inputsMaior{
+    border: none;
+    height: 5em;
+    width: 15rem;
+    border-radius: 7px;
+}
+
+h2{
+    font-size: 2rem;
+    margin-top: 3rem;
+    margin-bottom: 0.2rem;
+}
+
+h1{
+    font-size: 2rem;
+}
+
+h3 {
+    font-size: 1.5rem;
+    margin-top: 3rem;
+    margin-bottom: 0rem;
+}
+
+.disclaimer{
+    font-size: 0.8em;
+    margin-top: 0.01rem;
+    opacity: 75%;
+    font-style: italic;
+}
