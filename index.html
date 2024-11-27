@@ -5,60 +5,103 @@
     <title>Crie seu Currículo!</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.5/pdfmake.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.5/vfs_fonts.js"></script>
+    <script src="script.js"></script>
 </head>
 <body>
     <container>
     <div class="dados">
         <h1>Crie seu currículo!</h1>
+        <h2>Sua foto:</h2>
+        <p class="disclaimer"> (alguns recrutadores recomendam não usar foto. <br> Caso opte por usar escolha uma que seja bem profissional)</p>
+        <label for="file-input">Escolher imagem</label>
+        <canvas width="150" height="150" id="canvas"></canvas>
+        <button onclick="removerImagem()" class="botaoRemover" id="botaoRemover">Remover Imagem</button>
+        <input type="file" id="file-input" accept=".png, .jpg, .jpeg">
+        <div class="dados">
+        <h2> Seus dados</h2>
         <p class="p">Nome</p>
         <input class="inputs" type="text" id="nome" placeholder="">
+        <p class="p">Telefone</p>
+        <input class="inputs" type="text" id="telefone" placeholder="ex. (35) 98888-8888">
+        <p class="p">Email</p>
+        <input class="inputs" type="text" id="email" placeholder="ex. seuemail@gmail.com">
         <p class="p">Sobre mim</p>
-        <input class="inputsMaior" type="text" id="sobremim" placeholder="conte um pouco sobre você. Sua idade, formação, o que procura e expectativas...">
-        <div class="exp">
-                <div class="dados">
-                    <h2>Experiencias</h2>
+        <textarea class="inputsMaior" id="sobreMim" placeholder="ex. Olá! Sou Igor, tenho 25 anos e sou estudante do quarto ano de Ciências Sociais. Procuro por oportunidades de atuação onde eu possa aprender e crescer como profissional."></textarea>
+                    <h2>Experiências</h2>
                     <p class="disclaimer"> (caso não haja, apenas deixe em branco)</p>
                     <p class="p">Nome da empresa</p>
-                    <input class="inputs" type="text" id="sobremim" placeholder="ex. Google">
+                    <input class="inputs" type="text" id="nomeEmpresa1" placeholder="ex. Google">
                     <p class="p">Período trabalhado</p>
-                    <input class="inputs" type="text" id="sobremim" placeholder="ex. 2022-2024">
-                    <p class="p">Conte um pouco sobre a atividade exercida nessa empresa</p>
-                    <input class="inputsMaior" type="text" id="sobremim" placeholder="ex. Gestor de Recursos Humanos. Gestão de equipes e implementação de estratégias de recrutamento,
-                    seleção e treinamento de pessoal. Gestão de
-                    conflitos e resolução de problemas">
-                </div>
-                <div class="dados">
-                    <h3>outra experiencia</h3>
+                    <input class="inputs" type="text" id="periodoEmpresa1" placeholder="ex. 2022-2024">
+                    <p class="p">Atividade exercida</p>
+                    <textarea class="inputsMaior" id="atividadeEmpresa1" placeholder="ex. Auxiliar Administrativo. Desenvolvi habilidades em organização, atendimento ao cliente e gestão de documentos. Atuei de forma proativa nos trabalhos em equipe."></textarea>
+
+                    <h3>Outra experiência</h3>
                     <p class="disclaimer"> (caso não haja, apenas deixe em branco)</p>
                     <p class="p">Nome da empresa</p>
-                    <input class="inputs" type="text" id="sobremim" placeholder="ex. Amazon">
+                    <input class="inputs" type="text" id="nomeEmpresa2" placeholder="ex. Amazon">
                     <p class="p">Período trabalhado</p>
-                    <input class="inputs" type="text" id="sobremim" placeholder="ex. 2021-2022">
-                    <p class="p">Conte um pouco sobre a atividade exercida nessa empresa</p>
-                    <input class="inputsMaior" type="text" id="sobremim" placeholder="ex. Gestor de Recursos Humanos. Gestão de equipes e implementação de estratégias de recrutamento,
-                    seleção e treinamento de pessoal. Gestão de
-                    conflitos e resolução de problemas">
-                </div>
-                <div class="dados">
-                    <h3>outra experiencia</h3>
+                    <input class="inputs" type="text" id="periodoEmpresa2" placeholder="ex. 2021-2022">
+                    <p class="p">Atividade exercida</p>
+                    <textarea class="inputsMaior" id="atividadeEmpresa2" placeholder="ex. Auxiliar Administrativo. Desenvolvi habilidades em organização, atendimento ao cliente e gestão de documentos. Atuei de forma proativa nos trabalhos em equipe."></textarea>
+
+
+                    <h3>Outra experiência</h3>
                     <p class="disclaimer"> (caso não haja, apenas deixe em branco)</p>
                     <p class="p">Nome da empresa</p>
-                    <input class="inputs" type="text" id="sobremim" placeholder="ex. Netflix">
+                    <input class="inputs" type="text" id="nomeEmpresa3" placeholder="ex. Netflix">
                     <p class="p">Período trabalhado</p>
-                    <input class="inputs" type="text" id="sobremim" placeholder="ex. 2020-2021">
-                    <p class="p">Conte um pouco sobre a atividade exercida nessa empresa</p>
-                    <input class="inputsMaior" type="text" id="sobremim" placeholder="ex. Gestor de Recursos Humanos. Gestão de equipes e implementação de estratégias de recrutamento,
-                    seleção e treinamento de pessoal. Gestão de
-                    conflitos e resolução de problemas">
-                </div>
+                    <input class="inputs" type="text" id="periodoEmpresa3" placeholder="ex. 2020-2021">
+                    <p class="p">Atividade exercida</p>
+                    <textarea class="inputsMaior" id="atividadeEmpresa3" placeholder="ex. Auxiliar Administrativo. Desenvolvi habilidades em organização, atendimento ao cliente e gestão de documentos. Atuei de forma proativa nos trabalhos em equipe."></textarea>
+
+                    <h2>Formações</h2>
+                    <p class="disclaimer"> (caso não haja, apenas deixe em branco)</p>
+                    <p class="p">Curso</p>
+                    <input type="text" class="inputs" id="formacao1" placeholder="ex. Ciencias da Computação">
+                    <p class="p">Período</p>
+                    <input type="text" class="inputs" id="periodoCurso1" placeholder="ex. 2020-2024">
+                    <p class="p">Instituição</p>
+                    <input type="text" class="inputs" id="instituicao1" placeholder="ex. USP">
+
+                    <h3>Outra formação</h3>
+                    <p class="disclaimer"> (caso não haja, apenas deixe em branco)</p>
+                    <p class="p">Curso</p>
+                    <input type="text" class="inputs" id="formacao2" placeholder="ex. Ciencias da Computação">
+                    <p class="p">Período</p>
+                    <input type="text" class="inputs" id="periodoCurso2" placeholder="ex. 2020-2024">
+                    <p class="p">Instituição</p>
+                    <input type="text" class="inputs" id="instituicao2" placeholder="ex. USP">
+
+                    <h3>Outra formação</h3>
+                    <p class="disclaimer"> (caso não haja, apenas deixe em branco)</p>
+                    <p class="p">Curso</p>
+                    <input type="text" class="inputs" id="formacao3" placeholder="ex. Ciencias da Computação">
+                    <p class="p">Período</p>
+                    <input type="text" class="inputs" id="periodoCurso3" placeholder="ex. 2020-2024">
+                    <p class="p">Instituição</p>
+                    <input type="text" class="inputs" id="instituicao3" placeholder="ex. USP">
+
+                    <h2>Habilidades</h2>
+                    <input type="text" class="inputs" id="habilidade1" placeholder="ex. Empatia">
+                    <input type="text" class="inputs" id="habilidade2" placeholder="ex. Boa comunicação">
+                    <input type="text" class="inputs" id="habilidade3" placeholder="ex. Atividades em grupo">
+                    <input type="text" class="inputs" id="habilidade4" placeholder="ex. Organização Exemplar">
+                    <input type="text" class="inputs" id="habilidade5" placeholder="ex. Proatividade">
+
+                    <h2>Idiomas</h2>
+                    <input type="text" class="inputs" id="idioma1" placeholder="ex. Ingles, fluente">
+                    <input type="text" class="inputs" id="idioma2" placeholder="ex. Espanhol, intermediário">
+                    <input type="text" class="inputs" id="idioma3" placeholder="ex. Atividades em grupo">
+
                 
         </div>
     </div>
 </container>
-    <button onclick="generatePDF()">Gerar PDF</button>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.5/pdfmake.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.5/vfs_fonts.js"></script>
-    <script src="script.js"></script>
+<div class="botoes">
+    <button class="botao" id="criarCurriculo" onclick="generatePDF()">Criar currículo</button>
+</div>
 </body>
 </html>

@@ -51,14 +51,9 @@ body {
     height: 2em;
     width: 15rem;
     border-radius: 7px;
+    margin-top: 0.1em;
 }
 
-.inputsMaior{
-    border: none;
-    height: 5em;
-    width: 15rem;
-    border-radius: 7px;
-}
 
 h2{
     font-size: 2rem;
@@ -67,6 +62,7 @@ h2{
 }
 
 h1{
+    margin-top: 2em;
     font-size: 2rem;
 }
 
@@ -81,4 +77,61 @@ h3 {
     margin-top: 0.01rem;
     opacity: 75%;
     font-style: italic;
+}
+
+.botoes{
+    margin-top: 2em;
+    margin-bottom: 2em;
+    text-align: center;
+}
+
+label {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+#file-input {
+    display: none; /* Esconde o input padrão */
+}
+
+#canvas {
+    margin-top: 1em;
+    border: 1px solid #000; /* Opcional, para visualização */
+    display: none; /* Canvas invisível por padrão */
+}
+
+.botaoRemover{
+    margin-top: 1em;
+    display: none;
+    padding: 10px 20px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.botao {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+
+  textarea {
+    overflow: hidden; /* Remove as barras de rolagem */
+    width: 20em;
+    height: 6em;
+    font-family: arial;
 }
